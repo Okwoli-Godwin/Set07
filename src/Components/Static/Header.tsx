@@ -150,5 +150,5 @@ const Container = styled.div<{bg: string, p: string}>`
     background-color: ${({bg}) => bg};
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: ${({p}) => p};
-    z-index: 10;
+    z-index: 12;
 `

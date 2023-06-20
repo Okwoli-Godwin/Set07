@@ -1,39 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import img from ".././Assets/blogg.jpg"
+import { FiSearch } from "react-icons/fi"
 
 const Hero = () => {
+
+    const myVideo = require("../Assets/vid.mp4")
   return (
       <Container>
+          
+          <Video src={myVideo} autoPlay={ true} loop playsInline />
           <Hold>
               <h1>Get Your New Book With Best Price Find Your Book Now</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunta sunt quaerat, eligendi ad, ipsum sit culpa porro fuga atque andersi delectus nostrum sapiente cupiditate.</p>
 
               <Holder>
+                  <Icon><FiSearch /></Icon>
                   <Input placeholder='Keyword' />
-                  <Line></Line>
-
-                  <Select>
-                      <option>Category</option>
-                      <option>Education</option>
-                      <option>Fine Arts</option>
-                      <option>History</option>
-                      <option>Music</option>
-                      <option>Philosophy</option>
-                      <option>Religion</option>
-                  </Select>
-                  <Line></Line>
-
-                  <Select>
-                      <option>Category</option>
-                      <option>Education</option>
-                      <option>Fine Arts</option>
-                      <option>History</option>
-                      <option>Music</option>
-                      <option>Philosophy</option>
-                      <option>Religion</option>
-                  </Select>
-                  <Button>Search</Button>
+                  
               </Holder>
           </Hold>
       </Container>
@@ -41,36 +25,25 @@ const Hero = () => {
 }
 
 export default Hero
-const Button = styled.div`
-    width: 100px;
-    height: 43px;
+const Icon = styled.div`
+    width: 50px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #E95009;
-    cursor: pointer;
-    color: #fff;
-    margin-right: 8px;
-    border-radius: 5px;
+    font-size: 18px;
 `
-const Select = styled.select`
-    width: 170px;
+const Video = styled.video`
+    position: absolute;
+    width: 100%;
     height: 100%;
-    border: none;
-    outline: none;
-    margin-left: 7px;
-    font-size: 15px;
-    margin-right: 7px;
-`
-const Line = styled.div`
-    width: 2px;
-    height: 18px;
-    background-color: gray;
+    object-fit: cover;
 `
 const Input = styled.input`
     padding-left: 15px;
     border: none;
     outline: none;
+    flex: 1;
     ::placeholder{
         font-size: 15px;
     }
@@ -78,7 +51,7 @@ const Input = styled.input`
 const Holder = styled.div`
     width: 50%;
     height: 65px;
-    border-radius: 10px;
+    border-radius: 50px;
     background-color: #fff;
     display: flex;
     margin-top: 13px;
@@ -90,6 +63,7 @@ const Hold = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
+    z-index: 10;
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
@@ -118,8 +92,11 @@ const Hold = styled.div`
 const Container = styled.div`
     width: 100%;
     display: flex;
-    background-image: url(${img});
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(${img});
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+    position: relative;
 `
